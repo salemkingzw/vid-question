@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add or Manage Questions</title>
+    <link rel="stylesheet" href="static/css/style2.css">
+</head>
+<body>
+    <h1>Add a Question</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Question:</label><br>
+        <textarea name="question_text" required></textarea><br>
+        <label>Option A:</label><br>
+        <input type="text" name="option_a" required><br>
+        <label>Option B:</label><br>
+        <input type="text" name="option_b" required><br>
+        <label>Option C:</label><br>
+        <input type="text" name="option_c" required><br>
+        <label>Option D:</label><br>
+        <input type="text" name="option_d" required><br>
+        <label>Correct Answer (A/B/C/D):</label><br>
+        <input type="text" name="correct_answer" required><br>
+        <label>Image (optional):</label><br>
+        <input type="file" name="image"><br><br>
+        <button type="submit">Add Question</button>
+    </form>
+
+    <h2>Existing Questions</h2>
+    <ul>
+        {% for question in questions %}
+        <li>
+            <p><strong>{{ loop.index }} {{ question.question_text }}</strong></p>
+            {% if question.image_filename %}
+            <img src="{{ url_for('uploaded_file', filename=question.image_filename) }}" alt="Question Image" style="max-width: 200px;">
+            {% endif %}
+            <p>A: {{ question.option_a }}</p>
+            <p>B: {{ question.option_b }}</p>
+            <p>C: {{ question.option_c }}</p>
+            <p>D: {{ question.option_d }}</p>
+            <p>Correct Answer: {{ question.correct_answer }}</p>
+            <form method="POST" action="{{ url_for('delete_question', id=question.id) }}" style="display:inline;">
+                <button type="submit" style="color: white;">Delete</button>
+            </form>
+            <a href="{{ url_for('edit_question', id=question.id) }}" style="color: blue;">Edit</a>
+        </li>
+        {% endfor %}
+    </ul>
+    
+    <a href="/">Home</a>
+</body>
+</html>

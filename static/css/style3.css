@@ -1,0 +1,98 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Header */
+h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Quiz Form */
+form {
+    max-width: 800px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Questions Section */
+form div {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+form div:last-of-type {
+    border-bottom: none;
+}
+
+form b p {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #34495e;
+}
+
+form img {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Options */
+form input[type="radio"] {
+    margin-right: 10px;
+}
+
+form input[type="radio"] + label {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Submit Button */
+form button {
+    display: block;
+    width: 100%;
+    background-color: #27ae60;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+form button:hover {
+    background-color: #218c53;
+}
+
+/* Home Link */
+a {
+    display: block;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #3498db;
+    text-decoration: none;
+    text-align: center;
+}
+
+a:hover {
+    color: #2980b9;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Edit Question</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style4.css') }}">
+</head>
+<body>
+    <h1>Edit Question</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Question:</label><br>
+        <textarea name="question_text" required>{{ question.question_text }}</textarea><br>
+        <label>Option A:</label><br>
+        <input type="text" name="option_a" value="{{ question.option_a }}" required><br>
+        <label>Option B:</label><br>
+        <input type="text" name="option_b" value="{{ question.option_b }}" required><br>
+        <label>Option C:</label><br>
+        <input type="text" name="option_c" value="{{ question.option_c }}" required><br>
+        <label>Option D:</label><br>
+        <input type="text" name="option_d" value="{{ question.option_d }}" required><br>
+        <label>Correct Answer (A/B/C/D):</label><br>
+        <input type="text" name="correct_answer" value="{{ question.correct_answer }}" required><br>
+        {% if question.image_filename %}
+        <p>Current Image:</p>
+        <img src="{{ url_for('uploaded_file', filename=question.image_filename) }}" alt="Question Image"><br>
+        {% endif %}
+        <label>Change Image (optional):</label><br>
+        <input type="file" name="image"><br><br>
+        <button type="submit">Update Question</button>
+    </form>
+</body>
+</html>

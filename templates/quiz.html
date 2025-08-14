@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="static/css/style3.css">
+</head>
+<body>
+    <h1>Quiz</h1>
+    <form method="POST">
+        {% for question in questions %}
+        <div>
+            <b><p> {{ loop.index }} {{ question.question_text }}</p></b>
+            {% if question.image_filename %}
+            <img src="{{ url_for('uploaded_file', filename=question.image_filename) }}" alt="Question Image" style="max-width: 300px;">
+            <br>
+            {% endif %}
+            
+            <input type="radio" name="{{ question.id }}" value="A" required> {{ question.option_a }}<br>
+            <input type="radio" name="{{ question.id }}" value="B"> {{ question.option_b }}<br>
+            <input type="radio" name="{{ question.id }}" value="C"> {{ question.option_c }}<br>
+            <input type="radio" name="{{ question.id }}" value="D"> {{ question.option_d }}<br>
+        </div>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+    <a href="/">Home</a>
+<!--
+    <script>
+// Automatically select the first radio button in each group
+document.addEventListener("DOMContentLoaded", () => {
+    // Get all the radio button groups by name
+    const radioGroups = {};
+
+    // Group radio buttons by their name attribute
+    document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+        if (!radioGroups[radio.name]) {
+            radioGroups[radio.name] = [];
+        }
+        radioGroups[radio.name].push(radio);
+    });
+
+    // Automatically select the first radio button in each group
+    Object.values(radioGroups).forEach((group) => {
+        if (group.length > 0) {
+            group[0].checked = true; // Select the first option
+        }
+    });
+});
+
+
+    </script>
+    -->
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style5.css') }}">
+</head>
+<body>
+    <h1>Results</h1>
+    <p>Score: {{ score }}/{{ total }}</p>
+    <ul>
+        {% for result in results %}
+        <li>
+            <p><strong>{{ result.question.question_text }}</strong></p>
+            {% if result.question.image_filename %}
+            <img src="{{ url_for('uploaded_file', filename=result.question.image_filename) }}" alt="Question Image" style="max-width: 300px;">
+            {% endif %}
+            <p>Your Answer: {{ result.user_answer }}</p>
+            <p>Correct Answer: {{ result.correct_answer }}</p>
+            <p>{% if result.is_correct %}✅ Correct{% else %}❌ Incorrect{% endif %}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/quiz">Take Quiz Again</a>
+    <a href="/">Home</a>
+</body>
+</html>

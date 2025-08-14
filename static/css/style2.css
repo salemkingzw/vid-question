@@ -1,0 +1,135 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Header */
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Form Styles */
+form {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+}
+
+form input[type="text"],
+form textarea,
+form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+
+/* List of Questions */
+ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+ul li {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul li img {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+ul li p {
+    margin: 5px 0;
+}
+
+ul li strong {
+    color: #2c3e50;
+}
+
+/* Action Buttons */
+form button,
+a {
+    text-decoration: none;
+    font-size: 1em;
+}
+
+a {
+    color: #3498db;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+form button[type="submit"] {
+    background-color: #e74c3c;
+    color: white;
+    margin-top: 10px;
+}
+
+form button[type="submit"]:hover {
+    background-color: #c0392b;
+}
+
+/* Home Link */
+a[href="/"] {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #34495e;
+}
+
+a[href="/"]:hover {
+    color: #2c3e50;
+}
