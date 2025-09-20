@@ -2,9 +2,8 @@ import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-# Initialize Flask app and database
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///quiz.db'  # Adjust to your actual database URI
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///quiz.db' 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -77,11 +76,8 @@ def parse_option(option_line):
         option_text = option_line
     return option_text, correct_answer
 
-# Run the function to add questions from the file
 if __name__ == '__main__':
-    # Ensure the database tables are created
     with app.app_context():
         db.create_all()
 
-    # Path to your questions file
     add_questions_from_file('questions.txt')
