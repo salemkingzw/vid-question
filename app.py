@@ -125,7 +125,7 @@ def edit_question(id):
         question.option_d = option_d
         question.correct_answer = correct_answer
 
-        # If a new image is uploaded, replace the old one
+       
         if image and image.filename != '':
             # Delete the old image if it exists
             if question.image_filename:
